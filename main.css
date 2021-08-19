@@ -1,0 +1,149 @@
+/*--------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/*-------------------------*/
+:root{
+    --tipografia-general:'Roboto', sans-serif;
+    --color-principal-fuerte:#121213;
+    --color-principal-menosfuerte:#161516;
+    --color-principal-claro:#373a44;
+    --color-blanco:#ffffff;
+}
+body{
+    font-family: var(--tipografia-general);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-principal-menosfuerte);
+    color: var(--color-blanco);
+}
+.grid{
+    display: grid;
+    grid-template-columns: 200px repeat(2,1fr);
+    grid-row: 50px 1fr;
+}
+.grid__up{
+    background-color:var(--color-principal-fuerte);
+    width: 100%;
+    height: 100%;
+    grid-column: 1/span 3;
+    border: 1px solid var(--color-principal-claro);
+    box-sizing: border-box;
+}
+.grid__edit-tareas{
+    background-color:var(--color-principal-menosfuerte);
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-principal-claro);
+    border-radius: 5px;
+    
+}
+.editor{
+    margin: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    height: 400px;
+
+}
+.editor__general{
+    margin: 5px 0 5px 0;
+}
+.editor__btn{
+    background-color: var(--color-blanco);
+    border:none;
+    height: 25px;
+
+}
+.editor__input{
+    border: none;
+    height: 20px;
+}
+
+.editor__p{
+    text-align: center;
+    font-family: var(--tipografia-general);
+}
+.div{
+    margin: 5px;
+    width: 100%;
+    min-height: 50px;
+    background-color: var(--color-principal-fuerte);
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    border-color: 1px solid var(--color-principal-claro);
+    justify-content: flex-end;
+}
+.div button{
+    border: none;
+    background-color: var(--color-blanco);
+    color: var(--color-principal-fuerte);
+    transition: 1s ;
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+
+}
+.div button:hover{
+    background-color: var(--color-principal-fuerte);
+    color: var(--color-blanco);
+    border: 1px solid var(--color-blanco);
+
+
+}
+.div__texto{
+    margin-right: auto;
+}
+.div__texto p{
+    font-size: 12px;
+    color: var(--color-blanco);
+    margin: 5px;
+
+    
+}
+.grid__tareas-agregadas{
+    grid-column: 2/span 2;
+    margin: 20px;
+    margin-top: 0px;
+    height: auto;
+}
+
+/*---css para editar la parte de editar*/
+.editar__div{
+    background-color: rgba(0, 0, 0, 0.63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+.editar__btn{
+    background-color: var(--color-blanco);
+    border: none;
+    width: 210px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.editar__input-texto{
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.editar__input-descripcion{
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+.btn__tarea svg{
+    width: 25px;
+    height: 25px;
+    margin: 10px 20px 0 0;
+    transition: .2s;
+}
+.btn__tarea svg:hover{
+    color: var(--color-principal-claro);
+}
