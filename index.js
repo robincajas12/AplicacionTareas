@@ -3,6 +3,7 @@ let enviar = document.getElementById("enviar");
 let numTareas = document.getElementById("i");
 const body = document.getElementById("body");
 let i = 0;
+let isPlay = false;
 class MyTask{
 
 
@@ -14,6 +15,7 @@ class MyTask{
         this.btnBorrar = document.createElement("div");
         this.btnEditar = document.createElement("div");
         this.idBtn;
+
         
 
 //------------------------------------------------------------
@@ -41,7 +43,6 @@ class MyTask{
         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
       </svg>`;
-
         //agregando los objetos a los div
         this.div1.appendChild(this.pTarea);
         this.div1.appendChild(this.pTareaDescripcion);
@@ -110,11 +111,17 @@ enviar.addEventListener("click",()=>{
 })
 
 
-
-
-
-
-
+function sonidoFondo(musicaFondo){
+    if(isPlay == false){
+        musicaFondo.play();
+        musicaFondo.loop = true; 
+        isPlay = true;
+    }
+    else{
+        musicaFondo.pause();
+        isPlay = false;
+    }
+}
 
 
 function sonidoCheck(){
@@ -122,3 +129,16 @@ function sonidoCheck(){
     music.play();
     music.loop =false;
 }
+const musicaFondo1 = new Audio('fondoSong.mp3');
+// window.addEventListener("offline", alert("Estas sin internet si recargas la pagina puede que pierdas tus datos si no los has subido espera a que regrese la conneccion"));
+ let playBtn = document.getElementById('play');
+ playBtn.addEventListener("click",()=>{
+        sonidoFondo(musicaFondo1);
+        if(isPlay == true){
+            playBtn.innerText = "Pause";
+        }
+        else{
+            playBtn.innerText = "Play";
+        }
+ })
+

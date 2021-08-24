@@ -3,9 +3,9 @@
 /*-------------------------*/
 :root{
     --tipografia-general:'Roboto', sans-serif;
-    --color-principal-fuerte:#121213;
-    --color-principal-menosfuerte:#161516;
-    --color-principal-claro:#373a44;
+    --color-principal-fuerte:#555557bd;
+    --color-principal-menosfuerte:#353535b4;
+    --color-principal-claro:#d0d2d8;
     --color-blanco:#ffffff;
 }
 body{
@@ -14,6 +14,11 @@ body{
     padding: 0;
     background-color: var(--color-principal-menosfuerte);
     color: var(--color-blanco);
+    background-image: url('fondo.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
 .grid{
     display: grid;
@@ -25,8 +30,23 @@ body{
     width: 100%;
     height: 100%;
     grid-column: 1/span 3;
+    display: flex;
     border: 1px solid var(--color-principal-claro);
     box-sizing: border-box;
+}
+.grid__up h1{
+    flex-grow: 1;
+}
+#play{
+    border: 1px solid var(--color-blanco);
+    width: auto;
+    height: auto;
+    padding: 30px;
+    transition: 0.5;
+    cursor:pointer;
+}
+#play:hover{
+    background-color: var(--color-principal-menosfuerte);
 }
 .grid__edit-tareas{
     background-color:var(--color-principal-menosfuerte);
