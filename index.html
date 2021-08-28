@@ -5,20 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="mainResponsibe.css">
   <title>CRUD</title>
 </head>
 <body id="body">
   <div class="grid">
     <div class="grid__up">
-      <h1>Mis Tareas</h1>
-      <div id="play">Play</div>
+      <h1 class="up__h1">Mis Tareas</h1>
+      <p id="i">tareas: 0</p>
+      <div class="agregar__mobile" id="btn-agregar-tarea">+</div>
     </div>
-    <div class="grid__edit-tareas editor">
+    <div class="grid__edit-tareas editor" id="agregar-tareas">
       <p class="editor__p editor__general">Editor de tareas</p>
       <input id="input-nombreTarea" class="editor__input-textoprincipal editor__input editor__general" input type="text" placeholder="Tarea" >
       <input id="input-descripcion"  class="editor__input-descripcion editor__input editor__general" input type="text" placeholder="descripcion de la tarea">
       <input class="editor__btn editor__general" type="submit" value="Crear Tarea" id="enviar">
-      <p id="i">Numero de tareas: 0</p>
+      <input class="editor__btn-cancelar editor__general" type="button" value="Salir" id="btn-cancelar">
     </div>
     <div class="grid__tareas-agregadas" id="caja">
     </div>

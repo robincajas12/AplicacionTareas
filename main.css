@@ -8,6 +8,14 @@
     --color-principal-claro:#d0d2d8;
     --color-blanco:#ffffff;
 }
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (min-width: 720px){
+    /*--------------------*/
+
 body{
     font-family: var(--tipografia-general);
     margin: 0;
@@ -18,6 +26,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    padding: 10px;
 
 }
 .grid{
@@ -33,20 +42,14 @@ body{
     display: flex;
     border: 1px solid var(--color-principal-claro);
     box-sizing: border-box;
+    border-radius: 10px;
+}
+.up__h1{
+    text-align: center;
+
 }
 .grid__up h1{
     flex-grow: 1;
-}
-#play{
-    border: 1px solid var(--color-blanco);
-    width: auto;
-    height: auto;
-    padding: 30px;
-    transition: 0.5;
-    cursor:pointer;
-}
-#play:hover{
-    background-color: var(--color-principal-menosfuerte);
 }
 .grid__edit-tareas{
     background-color:var(--color-principal-menosfuerte);
@@ -57,11 +60,11 @@ body{
     
 }
 .editor{
-    margin: 10px;
+    margin-top: 5px;
     display: inline-flex;
     flex-direction: column;
     height: 400px;
-
+    padding: 10px;
 }
 .editor__general{
     margin: 5px 0 5px 0;
@@ -166,4 +169,8 @@ body{
 }
 .btn__tarea svg:hover{
     color: var(--color-principal-claro);
+}
+.editor__btn-cancelar{
+    display: none;
+}  /*Tablets [601px -> 1200px]*/
 }

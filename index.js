@@ -59,7 +59,7 @@ class MyTask{
 
 
         i++;
-        numTareas.innerHTML ="Numero de tareas: " + i;
+        numTareas.innerHTML ="tareas: " + i;
        }
        editarTarea(){
         this.btnGuardarCambios.innerHTML = "Guardar Cambios"
@@ -94,7 +94,7 @@ enviar.addEventListener("click",()=>{
         sonidoCheck();
         caja.removeChild(elemento.div);
         i--;
-    numTareas.innerHTML ="Numero de tareas: " + i;
+    numTareas.innerHTML ="tareas: " + i;
     });
 
     elemento.btnEditar.addEventListener("click", ()=>{
@@ -111,34 +111,24 @@ enviar.addEventListener("click",()=>{
 })
 
 
-function sonidoFondo(musicaFondo){
-    if(isPlay == false){
-        musicaFondo.play();
-        musicaFondo.loop = true; 
-        isPlay = true;
-    }
-    else{
-        musicaFondo.pause();
-        isPlay = false;
-    }
-}
-
 
 function sonidoCheck(){
     const music = new Audio('campana.wav');
     music.play();
     music.loop =false;
 }
-const musicaFondo1 = new Audio('fondoSong.mp3');
-// window.addEventListener("offline", alert("Estas sin internet si recargas la pagina puede que pierdas tus datos si no los has subido espera a que regrese la conneccion"));
- let playBtn = document.getElementById('play');
- playBtn.addEventListener("click",()=>{
-        sonidoFondo(musicaFondo1);
-        if(isPlay == true){
-            playBtn.innerText = "Pause";
-        }
-        else{
-            playBtn.innerText = "Play";
-        }
- })
 
+//---btn cancelar y agregar---- código
+const btnCancelar = document.getElementById('btn-cancelar');
+const agregarTareas = document.getElementById('agregar-tareas');
+const btnAgregarTarea = document.getElementById('btn-agregar-tarea'); 
+btnCancelar.addEventListener("click", ()=>{
+    agregarTareas.style.display = "none";
+})
+btnAgregarTarea.addEventListener("click",()=>{
+    agregarTareas.style.display = "inline-flex";
+})
+let mediaqueryList = window.matchMedia("(max-width: 720px)");
+mediaqueryList.addEventListener("change", ()=>{
+    agregarTareas.style.display = "flex";      
+})
